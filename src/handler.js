@@ -2,10 +2,10 @@ const {nanoid} = require('nanoid');
 const books = require('./books');
 
 const addBookHandler = (request, h) => {
-  const {title, author, description, tags} = request.payload;
+  const {title, author, description, tags} = request.payload; // Basic Need Body
 
   const id = nanoid(16);
-  const createdAt = new Date().toISOString();
+  const createdAt = new Date().toISOString(); //get Current Date
   const updatedAt = createdAt;
 
   const newBook = {
@@ -13,12 +13,12 @@ const addBookHandler = (request, h) => {
   };
   books.push(newBook);
 
-  const isSuccess = books.filter((book) => book.id === id).length > 0;
+  const isSuccess = books.filter((book) => book.id === id).length > 0; // Check if book is added
 
   if (isSuccess) {
     const response = h.response({
       status: 'success',
-      message: 'Buku berhasil ditambahkan',
+      message: 'Book success added',
       data: {
         bookId: id,
       },
@@ -28,7 +28,7 @@ const addBookHandler = (request, h) => {
   }
   const response = h.response({
     status: 'fail',
-    message: 'Buku gagal ditambahkan',
+    message: 'Failed to add book',
   });
   response.code(500);
   return response;
