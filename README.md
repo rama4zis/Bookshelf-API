@@ -67,6 +67,8 @@ If the result is empty, it will return all books
 
 ```bash
 curl -X GET -G 'http://localhost:5000/books' -d "name=Book Name Test"
+```
+```bash
 curl -X GET -G 'http://localhost:5000/books' -d "reading=1"
 ```
 
