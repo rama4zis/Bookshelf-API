@@ -127,7 +127,7 @@ const getAllBooksHandler = (request, h) => {
     const response = h.response({
       status: 'success',
       data: {
-        search: request.query.name,
+        // search: "Buku tidak ditemukan",
         books: books.map((book) => { // maping and get id.books, name.books, publisher.books
           return {
             id: book.id,
