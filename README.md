@@ -57,7 +57,7 @@ curl -X GET http://localhost:5000/books/{id}
 
 | Params | Usage |
 | ------ | ------ |
-| name | "string" |
+| name | text |
 | reading | 1 or 0 |
 | finished | 1 or 0 |
 
